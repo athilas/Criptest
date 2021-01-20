@@ -1,12 +1,14 @@
-##-----------------------------------------------------------------------------------
-# Sofware que gera codigo aleatorio de mensagem
-# Data de criação: 01-2021
-##-----------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------
+#   Software  que gera codigo aleatorio de mensagem
+#   Data de Criacao: 01-2021
+#----------------------------------------------------------------------------------------
+
 
 from PySimpleGUI import PySimpleGUI as tela
 import random
 
-#----- Area de tela e tema-----------------------------------------------------------
+#----Area de tela e tema-----------------------------------------------------------------
+
 tela.theme('DarkGrey')
 
 informacao=[
@@ -28,10 +30,11 @@ layout =[
 
 janela =  tela.Window('CripTest', layout, icon='virus.ico')
 
-#----- inicio do software -----------------------------------------------------------
+
+#----Inicio do Software------------------------------------------------------------------
 
 while True:
-    event, values = janela.read()
+    event,values = janela.read()
 
 #   termina os eventos para sair
 
@@ -44,7 +47,7 @@ while True:
         janela['-IN-'].update('')
         janela['-OUT-'].update('')
 
-#   executa a codificação ou a tradução
+#   captura o texto da caixa de texto
 
     if event == 'Executar':
         ini= int(100*(random.random()))
@@ -61,7 +64,8 @@ while True:
         if int(ini)<10:
             ini = '00'+str(ini)
 
-#   executa codificação
+
+#   executa a codificacao do texto
 
         if values['-COD-'] == True:
 
@@ -76,7 +80,8 @@ while True:
                 pos=pos+1
             cod =str(ini) + cod
 
-#    executa a tradução do codigo
+
+#   executa a traducao do codigo
 
         if values['-MEM-']==True:
             for c in men2:
@@ -92,10 +97,11 @@ while True:
                 posi = posi +1
                 pos = pos +1
     
-#    coloca o resultado na tela
+
+#   manda o resultado para tela   
 
         janela["-OUT-"].update(cod)
 
 janela.close()
 
-##-----Fim do programa ------------------------------------------
+#----Fim do programa---------------------------------------------------------------------
