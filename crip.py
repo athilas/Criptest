@@ -5,7 +5,7 @@
 #----------------------------------------------------------------------------------------
 
 
-from PySimpleGUI import PySimpleGUI as tela
+import PySimpleGUI as tela
 import random
 
 #----Area de tela e tema-----------------------------------------------------------------
